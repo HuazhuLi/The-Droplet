@@ -8,7 +8,7 @@
 			<button v-on:click="update">click</button>
 
 		</div>
-		<div id="login-succ" v-else>
+		<div id="login-succ" v-else=>
 		</div>
 	</div>
 </template>
