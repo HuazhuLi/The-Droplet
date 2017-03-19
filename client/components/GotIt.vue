@@ -14,18 +14,56 @@
 	left: 50%;
 	transform:
 	translate(-50%,-50%);
+	background-color: #e9ece5;
+	width:90%;
+	height:80%;
 }
 #finished{
 	border:1px solid black;
 	width:50px
 }
-.img{
-	width:50px;
-	height:50px;
+
+#header{
+	height:20%;
+	width:100%;
 }
+.body{
+	position:fixed;
+	top:30%;
+	height:65%;
+}
+#newGotIt{
+	position:fixed;
+	left:20%;
+	top:5%;
+	width:60%;
+	height:15%;
+}
+.progress{
+	position:fixed;
+	top:95%;
+	height:5%;
+	width:100%;
+	background-color:black;
+	display:inline;
+}
+#finished{
+	background-color:white;
+	height:100%;
+	width:10%;
+	float:left;
+
+}
+#unfinished{
+	background-color:red;
+	height:100%;
+	width:10%;
+	float:left;	
+}
+
 </style>
 <template>
-<div class="gotIt">
+<div class="gotIt" v-if="!show">
 	<div id="wrapper">
 		<div class="header">
 			<input id="newGotIt"
@@ -33,7 +71,7 @@
 				placeholder="Now I got it."
 				v-model="newIt"
 				@keyup.enter="addNewIt">
-				{{done}}
+
 
 		</div>
 		<div class="body">
@@ -66,7 +104,7 @@
 			<div id="finished" >
 
 			</div>
-			<div id="finished">
+			<div id="unfinished">
 			</div>
 		</div>
 	</div>
@@ -84,7 +122,9 @@
 		},
 
 		computed: {
-
+			show(){
+				return this.$store.state.show;
+			},
 			done(){
 				var all = this.$store.state.allGotIt;
 				var sum = 0;

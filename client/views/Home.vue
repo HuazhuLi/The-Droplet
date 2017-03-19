@@ -4,6 +4,7 @@
   	<tab></tab>
   	<calendar></calendar>
   	<editor></editor>
+    <search></search>
     <login></login>
   </div>
 </template>
@@ -14,7 +15,7 @@ import GotIt from 'components/GotIt'
 import Calendar from 'components/Calendar'
 import Editor from 'components/Editor'
 import Login from 'components/Login'
-
+import Search from 'components/Search'
 export default {
   components: {
     Tab,
@@ -22,6 +23,7 @@ export default {
     Calendar,
     Editor,
     Login,
+    Search,
 
 
   }

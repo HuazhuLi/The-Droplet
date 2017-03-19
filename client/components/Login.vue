@@ -1,11 +1,11 @@
 <template>
 	<div class="user-info">
-		<div id="login-fail" v-if="1">
+		<div id="login-fail" v-if="show">
 			<input v-model="userinfo.userName" id="inputZone"  placeholder="Input a name">
 			<p>{{userName}}</p>
 			<input v-model="userinfo.password" id="passwordZone" placeholder="Input your password">
 
-			<button v-on:click="update">click</button>
+			<button v-on:click="update">{{show}}</button>
 
 		</div>
 		<div id="login-succ" v-else=>
@@ -20,10 +20,14 @@
 				userinfo:{
 					userName:'',
 					password:'',
+					yo:1
 				}
 			}
 		},
 		computed: {
+			show(){
+				return this.$store.state.show;
+			},
 			userName(){
 				return this.$store.state.userName
 

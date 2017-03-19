@@ -1,52 +1,34 @@
 <template>
-	<div id="app">
+	<div id="app" v-if="!show">
 		<div id="editor">
 			<div id="name">
-				<h1>The Editor</h1>
 				<input id="nameOfIt" v-model="editcontent">
 			</div>
 			<div id="tags">
 			</div>
 			<div id="toolbar" contenteditable="false">
 				<span class="for-character">
+					<img class="image" src="../static/bold.png" @click="bolden">
+					<img class="image" src="../static/italic.png" @click="italicen">
+					<img class="image" src="../static/underline.png" @click="underlineen">
+					<img class="image" src="../static/text-width.png" >
+					<img class="image" src="../static/strikethrough.png" @click="strikethroughen">
+					<img class="image" src="../static/copy.png" @click="copyen">
+					<img class="image" src="../static/cut.png" @click="cuten">
+					<img class="image" src="../static/delete.png" @click="deleten">
+					<img class="image" src="../static/align-justify.png">
+					<img class="image" src="../static/align-left.png" @click="alignleften">
+					<img class="image" src="../static/align-right.png" @click="alignrighten">
+					<img class="image" src="../static/align-center.png" @click="aligncenteren">
 
+					<img class="image" src="../static/undo.png" @click="undoen">
 
-					<button class="btn" id="btn-ruled" @click="rulen">Rule</button>
+					<img class="image" src="../static/redo.png" @click="redoen">
 				</span>
-				<span class="for-font">
-					<span class="font-size">
-						<button>font-size</button>
-						<div class="select-font-size">
-							<span @click="">hello</span>
-							<span></span>
-							<span></span>
-						</div>
-					</span>
-					<span class="font-size">
-						<button>font-size</button>
-						<div class="select-font-size">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</span>
-					<span class="font-size">
-						<button>font-size</button>
-						<div class="select-font-size">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</span>
-				</span>
-				<span class="for-position">
-				
-				</span>
-				<span class="for-editing">
-					<button id="btn-undo" @click="undoen">Undo</button>
-					<button id="btn-redo" @click="redoen">Redo</button>			
-				</span>
+
 			</div>
+			<img class="image" id="tags" src="../static/tags.png">
+
 			<section id="inputZone" contentEditable ="true" >
 				
 			</section>
@@ -64,11 +46,43 @@
 			yoyo: 12
 		},
 		computed: {
+			show(){
+				return this.$store.state.show;
+			},			
 			editcontent (){
 				return this.$store.state.editcontent
 			}
 		},
 		methods: {
+			aligncenteren(){
+				document.execCommand('justifyCenter', true)
+
+			},
+			alignrighten(){
+				document.execCommand('justifyRight', true)
+
+			},
+			alignleften(){
+				document.execCommand('justifyLeft', true)
+
+			},
+			strikethroughen(){
+				document.execCommand('strikeThrough', true)
+
+			},
+			copyen(){
+				document.execCommand('copy', true)
+
+			},
+			cuten(){
+				document.execCommand('cut', true)
+
+			},
+			deleten(){
+				document.execCommand('delete', true)
+
+			},
+
 			doneEditing (){
 				alert(vm.$$.contentzxc.childNodes.length)
 			},
@@ -93,6 +107,10 @@
 	}
 </script>
 <style scoped>
+	.image{
+		width:3%;
+		height:3%;
+	}
 	#notice{
 		color:white;
 		position:fixed;
@@ -100,12 +118,14 @@
 		right:10%;
 	}
 	#inputZone{
-		border:1px solid black;
-		height:75%;
-		width:95%;
-		margin-left: auto; margin-right: auto;
-
+		border:1px dotted #252839;
+		height:80%;
+		width:87%;
+		position:relative;
+		top:20%;
+		left:5%;
 	border-bottom-right-radius:20px;
+
 
 	}
 
@@ -116,6 +136,7 @@
 		right: 0vh;
 		top: 0vh;
 		background-color: #252839;
+		margin:0;
 	}
 	#editor{
 		border:1px solid black; 
@@ -129,11 +150,19 @@
 	border-bottom-right-radius:20px;
 	}
 	#nameOfIt{
-		height:5%;
-		width:75%;
- 		margin-left: auto; 
- 		margin-right: auto;
-
+		height:4%;
+		width:34.6%;
+		position:fixed;
+		left:57%;
+		top:10%;
+		border:1px solid #252839;
+	border-top-right-radius:10px;
+	background-color:#e9ece5;
+	}
+	#toolbar{
+		position:fixed;
+		left:55.7%;
+		top:20%;
 	}
 	.select-font-size{
 

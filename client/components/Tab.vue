@@ -1,5 +1,5 @@
 <template>
-	<div id="tab">
+	<div id="tab" v-if="!show">
 		<div id="nav">
 			<div id="user">
 
@@ -36,7 +36,12 @@
 
 <script>
 	export default{
-		name:'tab'
+		name:'tab',
+		computed:{
+			show(){
+				return this.$store.state.show;
+			},			
+		}
 	}
 </script>
 

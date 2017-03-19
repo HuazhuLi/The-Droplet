@@ -15,7 +15,8 @@ const state = {
     id:0},
   ],
   yo: 1,
-  editcontent:''
+  editcontent:'',
+  show:0,
 }
 const getters = {
   doneGotIt(state)  {

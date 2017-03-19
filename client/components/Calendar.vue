@@ -105,7 +105,7 @@
 
 <template>
 
-		<div id="calendar" v-bind:style="styleObject">
+		<div id="calendar" v-bind:style="styleObject" v-if="!show">
 			<div id="wrapper">
 				<div class="calendar-header">
 					<div id="wrapper3">
@@ -144,6 +144,9 @@
 		}
 		},
 		computed:{
+			show(){
+				return this.$store.state.show;
+			},			
 			   presentTime () {
             return this.$store.state.presentTime
 				
