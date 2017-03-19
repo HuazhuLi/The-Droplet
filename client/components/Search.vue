@@ -3,8 +3,8 @@
 <div id="wrapper">
 <form method="get" id="searchform" action="">
 	<fieldset class="searchCom">
-		<input type="text" class="box" name="s" id="searchInput" placeholder="Search it">
-		<button id="btn" title="searchbtn">Search</button>
+		<input type="text" class="box" name="s" id="searchInput" placeholder="Search the title of article">
+		<img id="searchimg" src="../static/search.png">
 	</fieldset>
 </form>
 </div>
@@ -16,7 +16,14 @@
 	left:15%;
 	top:50%;
 	width:40%;
-	height:10%;
+
+}
+#searchform{
+}
+.searchCom{
+
+	height:2%;
+	 border: 0; 
 }
 #wrapper{
 	width:90%;
@@ -24,5 +31,15 @@
 	position:relative;
 	left:5%;
 
+}
+#searchimg{
+	width:18px;
+	height:18px;
+}
+#searchInput{
+	width:94%;
+	position:relative;
+	left:-3%;
+	top:-4%;
 }
 </style>

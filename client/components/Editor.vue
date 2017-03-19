@@ -11,11 +11,13 @@
 					<img class="image" src="../static/bold.png" @click="bolden">
 					<img class="image" src="../static/italic.png" @click="italicen">
 					<img class="image" src="../static/underline.png" @click="underlineen">
-					<img class="image" src="../static/text-width.png" >
+
 					<img class="image" src="../static/strikethrough.png" @click="strikethroughen">
 					<img class="image" src="../static/copy.png" @click="copyen">
 					<img class="image" src="../static/cut.png" @click="cuten">
 					<img class="image" src="../static/delete.png" @click="deleten">
+					<img class="image" src="../static/decrease_font.png" @click="decreasen">
+					<img class="image" src="../static/text-width.png" @click="widthen">					
 					<img class="image" src="../static/align-justify.png">
 					<img class="image" src="../static/align-left.png" @click="alignleften">
 					<img class="image" src="../static/align-right.png" @click="alignrighten">
@@ -27,15 +29,13 @@
 				</span>
 
 			</div>
-			<img class="image" id="tags" src="../static/tags.png">
 
 			<section id="inputZone" contentEditable ="true" >
 				
 			</section>
-			<button id="editCompleted" v-on:click="doneEditing" v-el="contentzxc">Done</button>
 		</div>
 		<div id="notice">
-		<p>Developed by Huazhu</p>
+		<p>Developed by HuazhuLi</p>
 		</div>
 	</div>
 </template>
@@ -83,6 +83,12 @@
 
 			},
 
+			decreasen(){
+				document.execCommand('decreaseFontSize', true)
+			},
+			widthen(){
+				document.execCommand('increaseFontSize', true)
+			},
 			doneEditing (){
 				alert(vm.$$.contentzxc.childNodes.length)
 			},
@@ -107,22 +113,32 @@
 	}
 </script>
 <style scoped>
+	.for-character{
+	position:relative;
+	left:3%;
+	top:-27px;
+
+	}
 	.image{
 		width:3%;
 		height:3%;
+		padding-right:0.63%;
+		padding-left:0.63%;
+		border:0.5px solid #252839;
 	}
 	#notice{
 		color:white;
+		font-size:18px;
 		position:fixed;
-		top:95%;
-		right:10%;
+		top:93.5%;
+		right:8%;
 	}
 	#inputZone{
 		border:1px dotted #252839;
 		height:80%;
 		width:87%;
 		position:relative;
-		top:20%;
+		top:16.5%;
 		left:5%;
 	border-bottom-right-radius:20px;
 
@@ -158,6 +174,10 @@
 		border:1px solid #252839;
 	border-top-right-radius:10px;
 	background-color:#e9ece5;
+	font-size:20px;
+	}
+	#name{
+		height:0%;
 	}
 	#toolbar{
 		position:fixed;

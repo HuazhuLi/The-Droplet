@@ -34,10 +34,11 @@
 }
 #newGotIt{
 	position:fixed;
-	left:20%;
+	left:3%;
 	top:5%;
-	width:60%;
+	width:94%;
 	height:15%;
+	font-size:22px;
 }
 .progress{
 	position:fixed;
