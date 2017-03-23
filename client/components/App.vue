@@ -10,6 +10,8 @@
   padding:0;
   border:0;
     background-color: #252839;
+    height:100%;
+    width:100%;
 
 }
 </style>

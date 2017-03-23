@@ -37,7 +37,7 @@
 	height:18px;
 }
 #searchInput{
-	width:94%;
+	width:85%;
 	position:relative;
 	left:-3%;
 	top:-4%;
